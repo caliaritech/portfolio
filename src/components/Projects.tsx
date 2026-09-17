@@ -8,6 +8,8 @@ const kindColor: Record<string, string> = {
   NestJS: 'bg-[#e0234e]',
   'Node.js': 'bg-[#5fa04e]',
   TypeScript: 'bg-[#3178c6]',
+  'Web app': 'bg-accent-3',
+  Landing: 'bg-accent',
 }
 
 export function Projects() {
@@ -57,9 +59,13 @@ export function Projects() {
                 </div>
 
                 <div className="mt-auto flex items-center justify-between gap-3 pt-6 font-mono text-xs text-faint">
-                  <span className="flex items-center gap-1.5">
-                    <Calendar size={13} /> {p.year}
-                  </span>
+                  {p.year ? (
+                    <span className="flex items-center gap-1.5">
+                      <Calendar size={13} /> {p.year}
+                    </span>
+                  ) : (
+                    <span />
+                  )}
                   {p.repo ? (
                     <a href={p.repo} target="_blank" rel="noreferrer" className="flex items-center gap-1.5 hover:text-text">
                       <GithubIcon size={13} /> {copy.viewCode} <ChevronRight size={13} />

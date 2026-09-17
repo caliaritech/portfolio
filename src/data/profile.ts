@@ -93,82 +93,75 @@ export type Project = {
   kind: string
   description: Record<Lang, string>
   tags: string[]
-  year: string
+  year?: string
   url?: string
   repo?: string
 }
 
-// TODO: proyectos de ejemplo, reemplazar con la información real.
+// TODO: completar nombres reales, stack, año y links (url = sitio publicado, repo = GitHub público).
 export const projects: Project[] = [
   {
-    name: { es: 'E-commerce API', en: 'E-commerce API' },
+    name: { es: 'E-commerce', en: 'E-commerce' },
     kind: 'NestJS',
     description: {
-      es: 'Backend para tienda online con catálogo, carrito, órdenes e integración con pasarela de pagos.',
-      en: 'Online store backend with catalog, cart, orders and payment gateway integration.',
+      es: 'Backend de tienda online: catálogo, carrito, órdenes, stock e integración con pasarela de pagos.',
+      en: 'Online store backend: catalog, cart, orders, stock and payment gateway integration.',
     },
-    tags: ['NestJS', 'MongoDB', 'Payments', 'REST'],
-    year: '2025',
+    tags: ['NestJS', 'MongoDB', 'Checkout', 'REST'],
   },
   {
-    name: { es: 'Backoffice de gestión', en: 'Management backoffice' },
+    name: { es: 'Gestor del e-commerce', en: 'E-commerce admin panel' },
     kind: 'NestJS',
     description: {
-      es: 'Panel administrativo para controlar órdenes, precios, stock y estadísticas de venta en tiempo real.',
-      en: 'Admin dashboard to manage orders, pricing, stock and real-time sales statistics.',
+      es: 'Backoffice de la tienda anterior para administrar órdenes, precios, stock y estadísticas de venta.',
+      en: 'Backoffice for the store above to manage orders, pricing, stock and sales statistics.',
     },
     tags: ['NestJS', 'TypeScript', 'MongoDB'],
-    year: '2025',
   },
   {
-    name: { es: 'Facturas con IA', en: 'AI invoice processing' },
-    kind: 'TypeScript',
+    name: { es: 'E-commerce con gestor integrado', en: 'E-commerce with built-in admin' },
+    kind: 'NestJS',
     description: {
-      es: 'Carga de facturas por imagen: Gemini extrae los datos y el sistema los valida y registra automáticamente.',
-      en: 'Invoice upload by image: Gemini extracts the data and the system validates and stores it automatically.',
+      es: 'Tienda online completa con su propio panel de administración de productos, precios, órdenes y stock.',
+      en: 'Full online store with its own admin panel for products, pricing, orders and stock.',
     },
-    tags: ['Gemini', 'NestJS', 'OCR', 'Automation'],
-    year: '2026',
+    tags: ['NestJS', 'MongoDB', 'Checkout', 'Backoffice'],
   },
   {
     name: { es: 'Plataforma de cursos', en: 'Course platform' },
     kind: 'NestJS',
     description: {
-      es: 'Gestión de cursos, alumnos e inscripciones, con despliegues automatizados. En desarrollo.',
-      en: 'Course, student and enrollment management with automated deployments. In progress.',
+      es: 'Gestión de cursos, alumnos e inscripciones, con despliegues automatizados vía GitHub Actions.',
+      en: 'Course, student and enrollment management with automated deployments via GitHub Actions.',
     },
     tags: ['NestJS', 'MongoDB', 'GitHub Actions', 'Docker'],
-    year: '2026',
   },
   {
-    name: { es: 'Gestión de stock multi-sucursal', en: 'Multi-branch inventory' },
-    kind: 'Node.js',
+    name: { es: 'App para aprender inglés', en: 'English learning app' },
+    kind: 'Web app',
     description: {
-      es: 'Servicio de inventario con actualización de precios masiva y sincronización entre sucursales.',
-      en: 'Inventory service with bulk price updates and synchronization across branches.',
+      es: 'Aplicación web para practicar y aprender inglés, con contenido por niveles y seguimiento del progreso.',
+      en: 'Web app to practice and learn English, with level-based content and progress tracking.',
     },
-    tags: ['Node.js', 'Express', 'MySQL'],
-    year: '2024',
+    tags: ['TypeScript', 'Node.js', 'Web app'],
   },
   {
-    name: { es: 'Microservicios con NATS', en: 'Microservices with NATS' },
-    kind: 'NestJS',
+    name: { es: 'Single page · Cliente 1', en: 'Single page · Client 1' },
+    kind: 'Landing',
     description: {
-      es: 'Arquitectura de referencia con gateway, servicios independientes y mensajería por eventos.',
-      en: 'Reference architecture with a gateway, independent services and event-driven messaging.',
+      es: 'Sitio de una sola página para presentar un negocio, con formulario de contacto y diseño responsive.',
+      en: 'One-page website to showcase a business, with a contact form and responsive design.',
     },
-    tags: ['NestJS', 'NATS', 'Docker', 'Microservices'],
-    year: '2026',
+    tags: ['React', 'Responsive', 'SEO'],
   },
   {
-    name: { es: 'Servicio de autenticación', en: 'Authentication service' },
-    kind: 'NestJS',
+    name: { es: 'Single page · Cliente 2', en: 'Single page · Client 2' },
+    kind: 'Landing',
     description: {
-      es: 'Servicio de usuarios con JWT, refresh tokens y roles, reutilizable entre proyectos.',
-      en: 'User service with JWT, refresh tokens and roles, reusable across projects.',
+      es: 'Landing page orientada a conversión, rápida y optimizada para celulares.',
+      en: 'Conversion-focused landing page, fast and optimized for mobile.',
     },
-    tags: ['NestJS', 'JWT', 'MongoDB', 'GraphQL'],
-    year: '2025',
+    tags: ['React', 'Responsive', 'SEO'],
   },
 ]
 
@@ -276,7 +269,7 @@ const es = {
   projects: {
     eyebrow: 'freelance & open source',
     title: 'Proyectos',
-    intro: 'Backends construidos desde cero para clientes y proyectos propios.',
+    intro: 'E-commerce, plataformas y sitios construidos desde cero para clientes y proyectos propios.',
     private: 'Proyecto privado',
     viewCode: 'Ver código',
     open: 'Abrir',
@@ -411,7 +404,7 @@ const en: Content = {
   projects: {
     eyebrow: 'freelance & open source',
     title: 'Projects',
-    intro: 'Backends built from scratch for clients and personal projects.',
+    intro: 'E-commerce, platforms and websites built from scratch for clients and personal projects.',
     private: 'Private project',
     viewCode: 'View code',
     open: 'Open',
