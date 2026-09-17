@@ -91,6 +91,7 @@ const stackItems: { color: StackColor; items: string[] }[] = [
 export type Project = {
   name: Record<Lang, string>
   client?: string
+  own?: boolean // proyecto propio (muestra la etiqueta en lugar de un cliente)
   kind: string
   description: Record<Lang, string>
   tags: string[]
@@ -102,9 +103,21 @@ export type Project = {
 // Back en NestJS + MongoDB salvo el gestor de Barfer (Express). TODO: años y links donde se pueda.
 export const projects: Project[] = [
   {
+    name: { es: 'Lorico · app para aprender inglés', en: 'Lorico · English learning app' },
+    own: true,
+    kind: 'NestJS',
+    url: 'https://www.lorico.app/',
+    description: {
+      es: 'Aplicación web para aprender y practicar inglés, en producción con usuarios activos.',
+      en: 'Web app to learn and practice English, live in production with active users.',
+    },
+    tags: ['NestJS', 'MongoDB', 'TypeScript'],
+  },
+  {
     name: { es: 'E-commerce', en: 'E-commerce' },
     client: 'Barfer',
     kind: 'NestJS',
+    url: 'https://www.barferalimento.com/',
     description: {
       es: 'Backend de la tienda online: catálogo, carrito, órdenes, stock e integración con pasarela de pagos.',
       en: 'Online store backend: catalog, cart, orders, stock and payment gateway integration.',
@@ -125,6 +138,7 @@ export const projects: Project[] = [
     name: { es: 'E-commerce con gestor integrado', en: 'E-commerce with built-in admin' },
     client: 'Raw & Fun',
     kind: 'NestJS',
+    url: 'https://www.rawandfun.com/',
     description: {
       es: 'Tienda online completa con su propio panel de administración de productos, precios, órdenes y stock.',
       en: 'Full online store with its own admin panel for products, pricing, orders and stock.',
@@ -155,20 +169,12 @@ export const projects: Project[] = [
     name: { es: 'Sitio institucional', en: 'Company website' },
     client: 'Serlab',
     kind: 'Landing',
+    // url: '', // TODO: agregar cuando esté publicado
     description: {
       es: 'Sitio de una sola página para presentar la empresa y sus servicios, con contacto y diseño responsive.',
       en: 'One-page website presenting the company and its services, with contact and responsive design.',
     },
-    tags: ['NestJS', 'MongoDB', 'Responsive'],
-  },
-  {
-    name: { es: 'App para aprender inglés', en: 'English learning app' },
-    kind: 'NestJS',
-    description: {
-      es: 'Aplicación web para practicar y aprender inglés, con contenido por niveles y seguimiento del progreso.',
-      en: 'Web app to practice and learn English, with level-based content and progress tracking.',
-    },
-    tags: ['NestJS', 'MongoDB', 'TypeScript'],
+    tags: ['Landing page', 'Responsive', 'SEO'],
   },
 ]
 
@@ -278,6 +284,7 @@ const es = {
     title: 'Proyectos',
     intro: 'E-commerce, plataformas y sitios construidos desde cero para clientes y proyectos propios.',
     private: 'Proyecto privado',
+    own: 'Proyecto propio',
     viewCode: 'Ver código',
     visit: 'Ver sitio',
     open: 'Abrir',
@@ -414,6 +421,7 @@ const en: Content = {
     title: 'Projects',
     intro: 'E-commerce, platforms and websites built from scratch for clients and personal projects.',
     private: 'Private project',
+    own: 'Personal project',
     viewCode: 'View code',
     visit: 'Visit site',
     open: 'Open',

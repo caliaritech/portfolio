@@ -30,10 +30,16 @@ export function Projects() {
                 <div className="flex items-start justify-between gap-3">
                   <div>
                     <p className="flex flex-wrap items-center gap-2 font-mono text-xs text-muted">
-                      {p.client && (
-                        <span className="rounded-md border border-accent-2/40 bg-accent-2/10 px-2 py-0.5 text-accent-2">
-                          {p.client}
+                      {p.own ? (
+                        <span className="rounded-md border border-accent-3/40 bg-accent-3/10 px-2 py-0.5 text-accent-3">
+                          {copy.own}
                         </span>
+                      ) : (
+                        p.client && (
+                          <span className="rounded-md border border-accent-2/40 bg-accent-2/10 px-2 py-0.5 text-accent-2">
+                            {p.client}
+                          </span>
+                        )
                       )}
                       <span className="flex items-center gap-2">
                         <span className={`size-2 rounded-full ${kindColor[p.kind] ?? 'bg-accent-2'}`} />
