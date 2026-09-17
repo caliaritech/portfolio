@@ -7,6 +7,7 @@ import { Reveal, Section } from './Section'
 const kindColor: Record<string, string> = {
   NestJS: 'bg-[#e0234e]',
   'Node.js': 'bg-[#5fa04e]',
+  Express: 'bg-[#5fa04e]',
   TypeScript: 'bg-[#3178c6]',
   'Web app': 'bg-accent-3',
   Landing: 'bg-accent',

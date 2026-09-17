@@ -99,7 +99,7 @@ export type Project = {
   repo?: string // repo público en GitHub
 }
 
-// TODO: completar stack real, año y links donde se pueda.
+// Back en NestJS + MongoDB salvo el gestor de Barfer (Express). TODO: años y links donde se pueda.
 export const projects: Project[] = [
   {
     name: { es: 'E-commerce', en: 'E-commerce' },
@@ -114,12 +114,12 @@ export const projects: Project[] = [
   {
     name: { es: 'Gestor del e-commerce', en: 'E-commerce admin panel' },
     client: 'Barfer',
-    kind: 'NestJS',
+    kind: 'Express',
     description: {
       es: 'Backoffice independiente para administrar órdenes, precios, stock y estadísticas de venta de la tienda.',
       en: 'Standalone backoffice to manage the store’s orders, pricing, stock and sales statistics.',
     },
-    tags: ['NestJS', 'TypeScript', 'MongoDB'],
+    tags: ['Express', 'TypeScript', 'MongoDB'],
   },
   {
     name: { es: 'E-commerce con gestor integrado', en: 'E-commerce with built-in admin' },
@@ -159,7 +159,7 @@ export const projects: Project[] = [
       es: 'Sitio de una sola página para presentar la empresa y sus servicios, con contacto y diseño responsive.',
       en: 'One-page website presenting the company and its services, with contact and responsive design.',
     },
-    tags: ['React', 'Responsive', 'SEO'],
+    tags: ['NestJS', 'MongoDB', 'Responsive'],
   },
   {
     name: { es: 'App para aprender inglés', en: 'English learning app' },
@@ -168,7 +168,7 @@ export const projects: Project[] = [
       es: 'Aplicación web para practicar y aprender inglés, con contenido por niveles y seguimiento del progreso.',
       en: 'Web app to practice and learn English, with level-based content and progress tracking.',
     },
-    tags: ['TypeScript', 'Node.js', 'Web app'],
+    tags: ['NestJS', 'MongoDB', 'TypeScript'],
   },
 ]
 
