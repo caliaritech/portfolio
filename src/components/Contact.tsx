@@ -1,8 +1,9 @@
 import { ArrowUp, Check, Clock, Copy, Mail } from 'lucide-react'
 import { useState } from 'react'
 import { profile, socialsFor } from '../data/profile'
-import { useLang } from '../i18n'
-import { SocialIcon, socialColor } from './icons'
+import { useLang } from '../lang-context'
+import { SocialIcon } from './icons'
+import { socialColor } from './social-colors'
 import { Reveal } from './Section'
 
 export function Contact() {

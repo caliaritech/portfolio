@@ -31,10 +31,3 @@ export function SocialIcon({ name, size = 16, className }: IconProps & { name: S
       return <FileText size={size} className={className} />
   }
 }
-
-export const socialColor: Record<SocialKey, string> = {
-  github: 'text-text',
-  linkedin: 'text-[#4a9ce8]',
-  email: 'text-accent-2',
-  cv: 'text-accent-3',
-}

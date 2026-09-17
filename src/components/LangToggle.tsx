@@ -1,4 +1,4 @@
-import { useLang } from '../i18n'
+import { useLang } from '../lang-context'
 
 export function LangToggle() {
   const { lang, t, toggle } = useLang()

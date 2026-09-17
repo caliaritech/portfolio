@@ -1,6 +1,6 @@
 import { Award, ExternalLink, GraduationCap } from 'lucide-react'
 import { certificates, profile } from '../data/profile'
-import { useLang } from '../i18n'
+import { useLang } from '../lang-context'
 import { Reveal, Section } from './Section'
 
 const issuerColor: Record<string, string> = {

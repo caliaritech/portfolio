@@ -1,6 +1,6 @@
 import { Calendar, ChevronRight, ExternalLink } from 'lucide-react'
 import { projects } from '../data/profile'
-import { useLang } from '../i18n'
+import { useLang } from '../lang-context'
 import { GithubIcon } from './icons'
 import { Reveal, Section } from './Section'
 
@@ -25,13 +25,20 @@ export function Projects() {
         {projects.map((p, i) => {
           const link = p.url ?? p.repo
           return (
-            <Reveal key={p.name.es} delay={(i % 3) * 80} className="h-full">
+            <Reveal key={`${p.client}-${p.name.es}`} delay={(i % 3) * 80} className="h-full">
               <article className="card card-hover flex h-full flex-col p-6">
                 <div className="flex items-start justify-between gap-3">
                   <div>
-                    <p className="flex items-center gap-2 font-mono text-xs text-muted">
-                      <span className={`size-2 rounded-full ${kindColor[p.kind] ?? 'bg-accent-2'}`} />
-                      {p.kind}
+                    <p className="flex flex-wrap items-center gap-2 font-mono text-xs text-muted">
+                      {p.client && (
+                        <span className="rounded-md border border-accent-2/40 bg-accent-2/10 px-2 py-0.5 text-accent-2">
+                          {p.client}
+                        </span>
+                      )}
+                      <span className="flex items-center gap-2">
+                        <span className={`size-2 rounded-full ${kindColor[p.kind] ?? 'bg-accent-2'}`} />
+                        {p.kind}
+                      </span>
                     </p>
                     <h3 className="mt-2 font-display text-xl font-semibold">{p.name[lang]}</h3>
                   </div>
@@ -69,6 +76,10 @@ export function Projects() {
                   {p.repo ? (
                     <a href={p.repo} target="_blank" rel="noreferrer" className="flex items-center gap-1.5 hover:text-text">
                       <GithubIcon size={13} /> {copy.viewCode} <ChevronRight size={13} />
+                    </a>
+                  ) : p.url ? (
+                    <a href={p.url} target="_blank" rel="noreferrer" className="flex items-center gap-1.5 hover:text-text">
+                      {copy.visit} <ChevronRight size={13} />
                     </a>
                   ) : (
                     <span>{copy.private}</span>

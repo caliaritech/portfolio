@@ -90,36 +90,40 @@ const stackItems: { color: StackColor; items: string[] }[] = [
 
 export type Project = {
   name: Record<Lang, string>
+  client?: string
   kind: string
   description: Record<Lang, string>
   tags: string[]
   year?: string
-  url?: string
-  repo?: string
+  url?: string // sitio publicado (puede existir aunque el código sea privado)
+  repo?: string // repo público en GitHub
 }
 
-// TODO: completar nombres reales, stack, año y links (url = sitio publicado, repo = GitHub público).
+// TODO: completar stack real, año y links donde se pueda.
 export const projects: Project[] = [
   {
     name: { es: 'E-commerce', en: 'E-commerce' },
+    client: 'Barfer',
     kind: 'NestJS',
     description: {
-      es: 'Backend de tienda online: catálogo, carrito, órdenes, stock e integración con pasarela de pagos.',
+      es: 'Backend de la tienda online: catálogo, carrito, órdenes, stock e integración con pasarela de pagos.',
       en: 'Online store backend: catalog, cart, orders, stock and payment gateway integration.',
     },
     tags: ['NestJS', 'MongoDB', 'Checkout', 'REST'],
   },
   {
     name: { es: 'Gestor del e-commerce', en: 'E-commerce admin panel' },
+    client: 'Barfer',
     kind: 'NestJS',
     description: {
-      es: 'Backoffice de la tienda anterior para administrar órdenes, precios, stock y estadísticas de venta.',
-      en: 'Backoffice for the store above to manage orders, pricing, stock and sales statistics.',
+      es: 'Backoffice independiente para administrar órdenes, precios, stock y estadísticas de venta de la tienda.',
+      en: 'Standalone backoffice to manage the store’s orders, pricing, stock and sales statistics.',
     },
     tags: ['NestJS', 'TypeScript', 'MongoDB'],
   },
   {
     name: { es: 'E-commerce con gestor integrado', en: 'E-commerce with built-in admin' },
+    client: 'Raw & Fun',
     kind: 'NestJS',
     description: {
       es: 'Tienda online completa con su propio panel de administración de productos, precios, órdenes y stock.',
@@ -128,13 +132,34 @@ export const projects: Project[] = [
     tags: ['NestJS', 'MongoDB', 'Checkout', 'Backoffice'],
   },
   {
+    name: { es: 'Plataforma de reclutamiento', en: 'Recruitment platform' },
+    client: 'Serlab',
+    kind: 'Web app',
+    description: {
+      es: 'Aplicación para gestionar procesos de selección: base de datos de candidatos, búsquedas, etapas y seguimiento.',
+      en: 'App to manage hiring processes: candidate database, job openings, pipeline stages and follow-up.',
+    },
+    tags: ['NestJS', 'MongoDB', 'TypeScript'],
+  },
+  {
     name: { es: 'Plataforma de cursos', en: 'Course platform' },
-    kind: 'NestJS',
+    client: 'Serlab',
+    kind: 'Web app',
     description: {
       es: 'Gestión de cursos, alumnos e inscripciones, con despliegues automatizados vía GitHub Actions.',
       en: 'Course, student and enrollment management with automated deployments via GitHub Actions.',
     },
     tags: ['NestJS', 'MongoDB', 'GitHub Actions', 'Docker'],
+  },
+  {
+    name: { es: 'Sitio institucional', en: 'Company website' },
+    client: 'Serlab',
+    kind: 'Landing',
+    description: {
+      es: 'Sitio de una sola página para presentar la empresa y sus servicios, con contacto y diseño responsive.',
+      en: 'One-page website presenting the company and its services, with contact and responsive design.',
+    },
+    tags: ['React', 'Responsive', 'SEO'],
   },
   {
     name: { es: 'App para aprender inglés', en: 'English learning app' },
@@ -144,24 +169,6 @@ export const projects: Project[] = [
       en: 'Web app to practice and learn English, with level-based content and progress tracking.',
     },
     tags: ['TypeScript', 'Node.js', 'Web app'],
-  },
-  {
-    name: { es: 'Single page · Cliente 1', en: 'Single page · Client 1' },
-    kind: 'Landing',
-    description: {
-      es: 'Sitio de una sola página para presentar un negocio, con formulario de contacto y diseño responsive.',
-      en: 'One-page website to showcase a business, with a contact form and responsive design.',
-    },
-    tags: ['React', 'Responsive', 'SEO'],
-  },
-  {
-    name: { es: 'Single page · Cliente 2', en: 'Single page · Client 2' },
-    kind: 'Landing',
-    description: {
-      es: 'Landing page orientada a conversión, rápida y optimizada para celulares.',
-      en: 'Conversion-focused landing page, fast and optimized for mobile.',
-    },
-    tags: ['React', 'Responsive', 'SEO'],
   },
 ]
 
@@ -272,6 +279,7 @@ const es = {
     intro: 'E-commerce, plataformas y sitios construidos desde cero para clientes y proyectos propios.',
     private: 'Proyecto privado',
     viewCode: 'Ver código',
+    visit: 'Ver sitio',
     open: 'Abrir',
   },
   contact: {
@@ -407,6 +415,7 @@ const en: Content = {
     intro: 'E-commerce, platforms and websites built from scratch for clients and personal projects.',
     private: 'Private project',
     viewCode: 'View code',
+    visit: 'Visit site',
     open: 'Open',
   },
   contact: {

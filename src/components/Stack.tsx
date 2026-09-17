@@ -1,4 +1,4 @@
-import { useLang } from '../i18n'
+import { useLang } from '../lang-context'
 import { Reveal, Section } from './Section'
 
 const tone = {

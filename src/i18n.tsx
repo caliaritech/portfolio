@@ -1,9 +1,6 @@
-import { createContext, useContext, useEffect, useState, type ReactNode } from 'react'
-import { content, type Content, type Lang } from './data/profile'
-
-type LangState = { lang: Lang; t: Content; toggle: () => void }
-
-const LangContext = createContext<LangState | null>(null)
+import { useEffect, useState, type ReactNode } from 'react'
+import { content, type Lang } from './data/profile'
+import { LangContext } from './lang-context'
 
 // Prioridad: ?lang= en la URL, después la última elección guardada, después el idioma del navegador.
 function initialLang(): Lang {
@@ -39,10 +36,4 @@ export function LangProvider({ children }: { children: ReactNode }) {
   const toggle = () => setLang((l) => (l === 'es' ? 'en' : 'es'))
 
   return <LangContext.Provider value={{ lang, t, toggle }}>{children}</LangContext.Provider>
-}
-
-export function useLang() {
-  const ctx = useContext(LangContext)
-  if (!ctx) throw new Error('useLang debe usarse dentro de LangProvider')
-  return ctx
 }

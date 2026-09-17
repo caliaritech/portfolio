@@ -1,8 +1,9 @@
 import { Menu, X } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { profile, socialsFor } from '../data/profile'
-import { useLang } from '../i18n'
-import { SocialIcon, socialColor } from './icons'
+import { useLang } from '../lang-context'
+import { SocialIcon } from './icons'
+import { socialColor } from './social-colors'
 import { LangToggle } from './LangToggle'
 
 export function Nav() {

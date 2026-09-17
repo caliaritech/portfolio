@@ -1,7 +1,8 @@
 import { profile, socialsFor } from '../data/profile'
-import { useLang } from '../i18n'
+import { useLang } from '../lang-context'
 import { HeroCanvas } from './HeroCanvas'
-import { SocialIcon, socialColor } from './icons'
+import { SocialIcon } from './icons'
+import { socialColor } from './social-colors'
 
 export function Hero() {
   const { lang, t } = useLang()

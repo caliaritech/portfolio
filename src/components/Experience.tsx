@@ -1,5 +1,5 @@
 import { Calendar, MapPin } from 'lucide-react'
-import { useLang } from '../i18n'
+import { useLang } from '../lang-context'
 import { Reveal, Section } from './Section'
 
 export function Experience() {
