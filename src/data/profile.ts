@@ -134,7 +134,7 @@ export const projects: Project[] = [
   {
     name: { es: 'Plataforma de reclutamiento', en: 'Recruitment platform' },
     client: 'Serlab',
-    kind: 'Web app',
+    kind: 'NestJS',
     description: {
       es: 'Aplicación para gestionar procesos de selección: base de datos de candidatos, búsquedas, etapas y seguimiento.',
       en: 'App to manage hiring processes: candidate database, job openings, pipeline stages and follow-up.',
@@ -144,7 +144,7 @@ export const projects: Project[] = [
   {
     name: { es: 'Plataforma de cursos', en: 'Course platform' },
     client: 'Serlab',
-    kind: 'Web app',
+    kind: 'NestJS',
     description: {
       es: 'Gestión de cursos, alumnos e inscripciones, con despliegues automatizados vía GitHub Actions.',
       en: 'Course, student and enrollment management with automated deployments via GitHub Actions.',
@@ -163,7 +163,7 @@ export const projects: Project[] = [
   },
   {
     name: { es: 'App para aprender inglés', en: 'English learning app' },
-    kind: 'Web app',
+    kind: 'NestJS',
     description: {
       es: 'Aplicación web para practicar y aprender inglés, con contenido por niveles y seguimiento del progreso.',
       en: 'Web app to practice and learn English, with level-based content and progress tracking.',
