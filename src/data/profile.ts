@@ -10,7 +10,7 @@ export const profile = {
   email: 'nicolascaliari28@gmail.com',
   photo: '/me.jpeg',
   github: 'https://github.com/caliaritech',
-  linkedin: 'https://www.linkedin.com/in/nicolas-caliari-628236236/',
+  linkedin: 'https://www.linkedin.com/in/nicolascaliari/',
   cv: {
     es: '/CV_Nicolas_Caliari_ES.pdf',
     en: '/CV_Nicolas_Caliari_EN.pdf',
