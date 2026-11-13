@@ -1,25 +1,26 @@
 import { useLang } from '../lang-context'
 
 export function LangToggle() {
-  const { lang, t, toggle } = useLang()
+  const { lang, t, setLang } = useLang()
 
   return (
-    <button
-      onClick={toggle}
-      aria-label={t.ui.switchLang}
-      title={t.ui.switchLang}
-      className="flex h-9 items-center rounded-lg border border-line bg-surface p-0.5 font-mono text-xs transition-colors hover:border-line-strong"
+    <div
+      role="group"
+      aria-label={t.switchLang}
+      className="flex shrink-0 items-center rounded-xl border border-line bg-bg/60 p-1 text-xs font-semibold"
     >
       {(['es', 'en'] as const).map((l) => (
-        <span
+        <button
           key={l}
-          className={`rounded-md px-2 py-1.5 uppercase transition-colors ${
-            lang === l ? 'bg-accent-2 font-semibold text-ink' : 'text-muted'
+          onClick={() => setLang(l)}
+          aria-pressed={lang === l}
+          className={`rounded-lg px-2.5 py-1.5 uppercase transition-colors ${
+            lang === l ? 'bg-raised text-text' : 'text-faint hover:text-muted'
           }`}
         >
           {l}
-        </span>
+        </button>
       ))}
-    </button>
+    </div>
   )
 }

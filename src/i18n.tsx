@@ -33,7 +33,5 @@ export function LangProvider({ children }: { children: ReactNode }) {
     window.history.replaceState(null, '', url)
   }, [lang, t])
 
-  const toggle = () => setLang((l) => (l === 'es' ? 'en' : 'es'))
-
-  return <LangContext.Provider value={{ lang, t, toggle }}>{children}</LangContext.Provider>
+  return <LangContext.Provider value={{ lang, t, setLang }}>{children}</LangContext.Provider>
 }
